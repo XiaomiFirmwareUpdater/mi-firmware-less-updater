@@ -65,14 +65,7 @@ rm $zip; done
 
 #Upload
 echo Uploading Files:
-mkdir -p ~/.ssh  &&  echo "Host *" > ~/.ssh/config && echo " StrictHostKeyChecking no" >> ~/.ssh/config
-for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5);
-sshpass -p $sfpass sftp yshalsager,xiaomi-firmware-updater@web.sourceforge.net << EOF
-cd /home/frs/project/xiaomi-firmware-updater/firmware-less/$product/
-mkdir $version
-quit
-EOF
-sshpass -p $sfpass rsync -avP -e ssh $file yshalsager@web.sourceforge.net:/home/frs/project/xiaomi-firmware-updater/firmware-less/$product/$version/ ; done
+for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5); wput $file ftp://$afhuser:$afhpass@uploads.androidfilehost.com//Xiaomi-Firmware/firmware-less/$product/$version/ ; done
 
 #Push
 echo Pushing:
