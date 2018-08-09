@@ -93,7 +93,7 @@ for file in *.zip; do
 	*Filesize*: $size
 	*MD5*: $md5
 	*Download Links*:
-	[Sourceforge](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/$codename/$version/)
+	[AndroidFileHost](https://www.androidfilehost.com/?w=files&flid=280337)
 	@XiaomiFirmwareUpdater | @MIUIUpdatesTracker"
 done
 else
