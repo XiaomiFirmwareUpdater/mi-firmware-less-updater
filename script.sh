@@ -97,7 +97,7 @@ for file in *.zip; do
 	@XiaomiFirmwareUpdater | @MIUIUpdatesTracker"
 done
 else
-    echo "Nothing found!" && set +e
+    echo "Nothing found!" && exit 0
 fi
 
 #Cleanup
