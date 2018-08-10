@@ -1,4 +1,4 @@
-#### Downloads: [![DownloadSF](https://img.shields.io/badge/Download-SourceForge-orange.svg)](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/)
+#### Downloads: [![DownloadAFH](https://img.shields.io/badge/Download-AndroidFileHost-brightgreen.svg)](https://www.androidfilehost.com/?w=files&flid=280337)
 
 [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
 
