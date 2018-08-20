@@ -6,7 +6,7 @@ before_install:
   - cd $HOME/XFU/ && wget -q https://github.com/XiaomiFirmwareUpdater/mi-firmware-less-updater/raw/stable/stable.sh
 
 script:
-  - chmod +x device.sh script.sh
+  - chmod +x *.sh
   - "travis_wait 50 sleep 1800 &"
   - ./device.sh
 
