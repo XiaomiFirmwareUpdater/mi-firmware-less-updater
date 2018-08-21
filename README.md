@@ -1,14 +1,11 @@
-## Xiaomi Firmware-less MIUI ROMs For Note 5 / 5 Pro (whyred)
+## Xiaomi Firmware-less MIUI ROMs For Mi Max 3 (nitrogen)
 
-#### Downloads: [![DownloadSF](https://img.shields.io/badge/Download-SourceForge-orange.svg)](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/whyred/)
+#### Downloads: [![DownloadSF](https://img.shields.io/badge/Download-SourceForge-orange.svg)](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/nitrogen/)
 
 | ID | MIUI Name | Device Name | Codename |
 | --- | --- | --- | --- |
-| 342 | HMNote5 | Xiaomi Note 5 (China) | whyred |
-| 342 | WHYREDGlobal | Xiaomi Note 5 Pro | whyred |
-
-### XDA Support Thread For whyred:
-[Go here](https://forum.xda-developers.com/redmi-note-5-pro/development/firmware-xiaomi-redmi-note-5-t3766138)
+| --- | MIMAX3 | Xiaomi Mi Max 3 | nitrogen |
+| --- | MIMAX3Global | Xiaomi Mi Max 3 Global | nitrogen |
 
 ### XDA Main Thread:
 [Go here](https://forum.xda-developers.com/android/software-hacking/devices-xiaomi-firmware-updater-t3741446)
