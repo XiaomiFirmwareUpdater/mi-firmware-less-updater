@@ -66,7 +66,10 @@ python3 create_flashable_firmware.py -L $zip
 rm $zip; done
 
 #Upload
-for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5); wput $file ftp://$afhuser:$afhpass@uploads.androidfilehost.com//Xiaomi-Firmware/firmware-less/$product/$version/ ; done
+for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5 | cut -d . -f1) 
+rclone copy -v sf:/home/frs/project/xiaomi-firmware-updater/firmware-less/Stable/$version/$product/
+rclone copy -v osdn:/storage/groups/x/xi/xiaomifirmwareupdater/firmware-less/Stable/$version/$product/
+done
 
 #Push
 echo Pushing:
@@ -79,6 +82,7 @@ for file in *.zip; do
 	codename=$(echo $file | cut -d _ -f2)
 	model=$(echo $file | cut -d _ -f4)
 	version=$(echo $file | cut -d _ -f5)
+	bigversion=$(echo $file | cut -d _ -f5 | cut -d . -f1)
 	android=$(echo $file | cut -d _ -f7 | cut -d . -f1,2)
 	size=$(du -h $file | awk '{print $1}')
 	md5=$(md5sum $file | awk '{print $1}')
@@ -91,7 +95,7 @@ for file in *.zip; do
 	*Filesize*: $size
 	*MD5*: $md5
 	*Download Links*:
-	[AndroidFileHost](https://www.androidfilehost.com/?w=files&flid=280337)
+	[SourceFroge](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/Stable/$bigversion/$codename/) - [Osdn](https://osdn.net/projects/xiaomifirmwareupdater/storage/firmware-less/Stable/$bigversion/$codename/)
 	@XiaomiFirmwareUpdater | @MIUIUpdatesTracker"
 done
 else
