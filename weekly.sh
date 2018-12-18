@@ -67,7 +67,10 @@ rm $zip; done
 
 #Upload
 echo Uploading Files:
-for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5); wput $file ftp://$afhuser:$afhpass@uploads.androidfilehost.com//Xiaomi-Firmware/firmware-less/$product/$version/ ; done
+for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5); 
+rclone copy -v sf:/home/frs/project/xiaomi-firmware-updater/firmware-less/Developer/$version/$product/
+rclone copy -v osdn:/storage/groups/x/xi/xiaomifirmwareupdater/firmware-less/Developer/$version/$product/
+done
 
 #Push
 echo Pushing:
@@ -83,7 +86,7 @@ for file in *.zip; do
 	android=$(echo $file | cut -d _ -f7 | cut -d . -f1,2)
 	size=$(du -h $file | awk '{print $1}')
 	md5=$(md5sum $file | awk '{print $1}')
-	python telegram.py -t $bottoken -c @XiaomiFirmwareUpdater -M "New firmware-less update available!
+	python telegram.py -t $bottoken -c @XiaomiFirmwareUpdater -M "New weekly firmware-less update available!
 	*Device*: $model
 	*Codename*: $codename
 	*Version*: $version
@@ -92,7 +95,7 @@ for file in *.zip; do
 	*Filesize*: $size
 	*MD5*: $md5
 	*Download Links*:
-	[AndroidFileHost](https://www.androidfilehost.com/?w=files&flid=280337)
+	[SourceFroge](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/Developer/$version/$codename/) - [Osdn](https://osdn.net/projects/xiaomifirmwareupdater/storage/firmware-less/Developer/$version/$codename/)
 	@XiaomiFirmwareUpdater | @MIUIUpdatesTracker"
 done
 else
