@@ -67,7 +67,6 @@ rm $zip; done
 
 #Upload
 for file in *.zip; do product=$(echo $file | cut -d _ -f2); version=$(echo $file | cut -d _ -f5 | cut -d . -f1) 
-rclone copy -v $file sf:/home/frs/project/xiaomi-firmware-updater/firmware-less/Stable/$version/$product/
 rclone copy -v $file osdn:/storage/groups/x/xi/xiaomifirmwareupdater/firmware-less/Stable/$version/$product/
 done
 
@@ -95,7 +94,7 @@ for file in *.zip; do
 	*Filesize*: $size
 	*MD5*: $md5
 	*Download Links*:
-	[SourceFroge](https://sourceforge.net/projects/xiaomi-firmware-updater/files/firmware-less/Stable/$bigversion/$codename/) - [Osdn](https://osdn.net/projects/xiaomifirmwareupdater/storage/firmware-less/Stable/$bigversion/$codename/)
+	[Osdn](https://osdn.net/projects/xiaomifirmwareupdater/storage/firmware-less/Stable/$bigversion/$codename/)
 	@XiaomiFirmwareUpdater | @MIUIUpdatesTracker"
 done
 else
